@@ -10,6 +10,10 @@ end
 load 'jasmine/tasks/jasmine.rake'
 require './lib/sprockets_environment_builder'
 
+task :start do
+  sh %{rerun --dir server -- foreman start}
+end
+
 task :guard do
   Rake::Task["assets:compile_all"].invoke
   ::Guard.start
@@ -31,11 +35,11 @@ namespace :assets do
   end
 
   task :compile_javascripts do
-    compile_asset('public/.compiled', 'application.js', :development)
+    compile_asset('client/public/.compiled', 'application.js', :development)
   end
 
   task :compile_stylesheets do
-    compile_asset('public/.compiled', 'application.css', :development)
+    compile_asset('client/public/.compiled', 'application.css', :development)
   end
 
   task :compile_specs do

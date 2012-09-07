@@ -22,8 +22,7 @@ group :assets do
 end
 
 group :development do
-  gem 'foreman'
-  gem 'heroku'
+  gem 'rerun'
 end
 
 group :test do
