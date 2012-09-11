@@ -1,10 +1,9 @@
 @import "bootstrap/mixins";
 
 body {
-  color: darken(#f00, 20%);
+  text-align:center;
 }
 
-#test-bootstrap-mixins {
-  @include box-shadow;
-  @include gradientBar(#eee, #aaa);
+.logo {
+  padding: 10px 0;
 }

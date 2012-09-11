@@ -1,8 +1,8 @@
-- content_for :custom_head do
-  %meta{:name => "keywords", :content => "1,2,3"}
-%h1= @message
-%p#test-bootstrap-mixins
-  %a{:href => "/json-test?readable=1"} JSON test
-%button#test-thing.btn
-  %i.icon-user.icon-white
-  Test JST
+%h1.logo
+  %img{:src => "/logo.png", :alt => "fluent"}
+
+%form{:method => "POST", :action => "/segment"}
+  %p
+    %textarea{:name => "input", :rows => "5", :placeholder => "Enter some Japanese text"}
+  %p
+    %input.btn.btn-large{:type => "submit", :value => "Translate"}
