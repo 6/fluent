@@ -1,8 +1,5 @@
-test_thing = ->
-  echo(JST['hello']({name: "Peter G", age: "23"}))
-
-echo = (html) ->
-  $("body").append(html)
-
 $ ->
-  $("#test-thing").click test_thing
+  pixelRatio = window.devicePixelRatio || 1
+  if pixelRatio > 1
+    $('img.hires').each ->
+      $(@).attr('src', $(@).attr('src').replace(".","_2x.")).attr("width", "150px")
